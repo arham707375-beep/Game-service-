@@ -1,87 +1,121 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    font-family: 'Poppins', sans-serif; /* नया प्रीमियम फॉन्ट */
+    background: linear-gradient(135deg, #1e3a8a, #0d9488);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.2);
-    max-width: 420px;
-    width: 92%;
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    font-size: 50px;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite; /* डायमंड को तैरता हुआ इफ़ेक्ट देने के लिए */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 h1 {
-    margin-top: 0;
-    color: #333;
-    text-align: center;
-    font-size: 24px;
+    margin: 5px 0;
+    color: #1e293b;
+    font-size: 26px;
+    font-weight: 700;
 }
 
+.subtitle {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* बटन की कॉमन स्टाइल्स */
 .btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* आइकॉन और टेक्स्ट के बीच गैप */
     text-decoration: none;
     color: #fff;
-    padding: 15px;
+    padding: 14px;
     border-radius: 12px;
-    margin: 15px 0 0 0; /* सबमिट बटन के ऊपर थोड़ा गैप */
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    width: 100%; /* बटन पूरी चौड़ाई का दिखेगा */
+    margin: 14px 0;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.call { background: #16a34a; }
-.wa { background: #25D366; }
-.req { background: #2563eb; }
-
-/* बटन पर माउस ले जाने पर इफ़ेक्ट (Hover) */
-.btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-    transition: all 0.2s ease;
+.btn i {
+    font-size: 18px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #e2e8f0; /* थोड़ा हल्का और प्रीमियम बॉर्डर */
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 14px;
+/* बटन के अलग-अलग कलर्स */
+.call {
+    background: #16a34a;
+}
+.call:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
 }
 
-/* इनपुट बॉक्स पर क्लिक करने पर सुंदर आउटलाइन */
-input:focus, textarea:focus {
-    border-color: #2563eb;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+.whatsapp {
+    background: #25D366;
+}
+.whatsapp:hover {
+    background: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
 }
 
-textarea {
-    resize: vertical; /* यूजर सिर्फ ऊपर-नीचे खींच पाए, दाएँ-बाएँ नहीं */
-    min-height: 80px;
+.telegram {
+    background: #2563eb; /* सबमिट रिक्वेस्ट के लिए ब्लू */
+}
+.telegram:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
 }
 
-p {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0;
+/* स्टेटस इंडिकेटर */
+.status {
+    background: #f0fdf4;
+    color: #16a34a;
+    padding: 8px 16px;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 1px solid #bbf7d0;
 }
 
-p a {
-    color: #64748b;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-p a:hover {
-    color: #2563eb;
+footer {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #94a3b8;
 }
