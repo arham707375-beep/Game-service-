@@ -3,129 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Submit Support Request</title>
+<title>Customer Care</title>
 
 <link rel="stylesheet" href="style.css">
 
-<style>
-body{
-font-family:Arial,sans-serif;
-background:#f5f7fb;
-margin:0;
-padding:20px;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-.container{
-max-width:500px;
-margin:auto;
-}
-
-.card{
-background:#fff;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.2);
-}
-
-h1{
-text-align:center;
-color:#007bff;
-}
-
-input,textarea{
-width:100%;
-padding:15px;
-margin:10px 0;
-border-radius:12px;
-border:1px solid #ccc;
-font-size:16px;
-box-sizing:border-box;
-}
-
-button{
-width:100%;
-padding:16px;
-background:#0088cc;
-color:#fff;
-font-size:18px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-}
-
-button:hover{
-background:#006fa3;
-}
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 <body>
 
 <div class="container">
+
 <div class="card">
 
-<h1>Submit Support Request</h1>
+<div class="logo">💎</div>
 
-<form id="supportForm">
+<h1>Customer Care</h1>
 
-<input type="text" id="name" placeholder="Full Name" required>
+<p class="subtitle">
+Premium Customer Care Support<br>
+24×7 Fast • Secure • Trusted
+</p>
 
-<input type="tel" id="mobile" placeholder="Mobile Number" required>
+<a href="tel:+911234567890" class="btn call">
+<i class="fa-solid fa-phone"></i>
+CALL SUPPORT
+</a>
 
-<input type="email" id="email" placeholder="Email Address" required>
+<a href="https://wa.me/911234567890" class="btn whatsapp">
+<i class="fa-brands fa-whatsapp"></i>
+WHATSAPP SUPPORT
+</a>
 
-<input type="text" id="userid" placeholder="User ID" required>
+<a href="request.html" class="btn telegram">
+<i class="fa-brands fa-telegram"></i>
+SUBMIT REQUEST
+</a>
 
-<textarea id="problem" rows="5" placeholder="Describe Your Problem" required></textarea>
+<div class="status">
+🟢 Support Team Online
+</div>
 
-<button type="submit">Submit Request</button>
-
-</form>
+<footer>
+© 2026 Customer Care | All Rights Reserved
+</footer>
 
 </div>
+
 </div>
-
-<script>
-
-const botToken="PASTE_YOUR_BOT_TOKEN_HERE";
-const chatId="PASTE_YOUR_CHAT_ID_HERE";
-
-document.getElementById("supportForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const message=
-`📩 New Support Request
-
-👤 Name : ${name.value}
-📞 Mobile : ${mobile.value}
-📧 Email : ${email.value}
-🆔 User ID : ${userid.value}
-
-📝 Problem :
-${problem.value}`;
-
-fetch(`https://api.telegram.org/bot${botToken}/sendMessage`,{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-chat_id:chatId,
-text:message
-})
-})
-.then(()=>{
-alert("✅ Request Submitted Successfully!\n\nPlease wait 2 hours.\nOur support team will contact you soon.");
-document.getElementById("supportForm").reset();
-})
-.catch(()=>{
-alert("Error! Check Bot Token or Chat ID.");
-});
-
-});
-
-</script>
 
 </body>
 </html>
